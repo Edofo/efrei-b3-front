@@ -1,0 +1,63 @@
+/* styles.css — fondations & design system
+   ============================================================
+   Le reset ci-dessous est FOURNI : de la plomberie, pas du
+   design. Il neutralise les styles natifs (pour que la balise
+   n'impose rien) et pose .sr-only, que le HTML utilise déjà.
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Les balises natives n'imposent rien : le HTML peut changer de balise
+   sans que le rendu bouge d'un pixel. Tout le style vient des classes. */
+button,
+a,
+input {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+}
+button {
+  cursor: pointer;
+  text-align: inherit;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+input {
+  appearance: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  display: block;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Visible du lecteur d'écran, invisible à l'oeil. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* styles.css — à toi : le fond, la typo, les boutons
+   ============================================================
+   À écrire ici, et rien d'autre :
+
+   body .btn .btn-play .btn-play:hover .btn-info .btn-info:hover
+
+   La cible est ../../bloc01-html-nul/index.html. Ouvre-la à côté.
+   ============================================================ */

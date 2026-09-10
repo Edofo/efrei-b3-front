@@ -27,22 +27,59 @@ La feuille de style n'utilise que des classes : tu peux remplacer n'importe
 quelle balise par la bonne sans rien casser. Si ton rendu bouge, c'est que tu
 as changé une classe — reviens en arrière.
 
+### Ce qu'on ne te demande PAS : supprimer les `<div>`
+
+Une `<div>` n'est pas une faute. C'est une boîte sans signification, et c'est
+exactement ce qu'il faut quand on a besoin d'une boîte sans signification :
+grouper trois éléments pour les aligner, poser un dégradé par-dessus une image.
+
+La faute, c'est la `<div>` **là où un élément signifiant existe**. Le corrigé
+en garde 44 sur 146 — toutes des boîtes de mise en page. Ne cherche pas le zéro.
+
 ### La checklist
 
-**L'en-tête du document**
+**Les méta essentiels**
 
 - [ ] `<html lang="fr">`
-- [ ] un `<title>` qui décrit la page
-- [ ] `<meta name="description">`
+- [ ] un `<title>` unique et descriptif — c'est le texte bleu dans Google
+- [ ] `<meta name="description">` — le texte gris juste en dessous
 - [ ] `<meta name="viewport">`
-- [ ] les balises Open Graph (`og:title`, `og:description`, `og:image`)
+- [ ] `<link rel="canonical">` — l'URL de référence de cette page
+- [ ] `<meta name="robots">`
+
+**Le partage sur les réseaux (Open Graph)**
+
+- [ ] `og:type`, `og:site_name`, `og:locale`, `og:url`
+- [ ] `og:title`, `og:description`
+- [ ] `og:image` avec ses `og:image:width`, `og:image:height`, `og:image:alt`
+- [ ] `twitter:card` en `summary_large_image`
+
+> ⚠️ **`og:image` exige une URL absolue** (`https://…/cover.jpg`), pas un
+> chemin relatif ni une `data:` URI : c'est un serveur distant qui va la
+> chercher, il n'a pas ta page sous les yeux. Format attendu : 1200 × 630.
+
+**Les données structurées**
+
+- [ ] un bloc `<script type="application/ld+json">` décrivant le site
+      (`@type: "WebSite"`), avec la `SearchAction` qui pointe vers ta
+      recherche interne. C'est ce qui donne une barre de recherche
+      directement dans les résultats Google.
+
+**Les URL parlantes**
+
+- [ ] plus aucun `href="#"` — `/series`, `/titres/dark`, `/mentions-legales`
+- [ ] le formulaire de recherche a une `action` et son champ un `name`
+      (`/recherche?q=…`), cohérents avec la `SearchAction` ci-dessus
 
 **La structure**
 
 - [ ] `<header>`, `<nav>`, `<main>`, `<footer>` à la place des `<div>`
-- [ ] **un seul `<h1>`**, puis `<h2>` pour les titres de rangées
+- [ ] **un seul `<h1>`**, puis `<h2>` pour les titres de rangées, puis `<h3>`
+      pour le titre de chaque carte : un plan de document se lit comme une
+      table des matières
 - [ ] chaque rangée dans une `<section>`
-- [ ] les liens du pied de page dans une `<ul>` / `<li>`
+- [ ] les cartes et les liens du pied de page dans des `<ul>` / `<li>`
+- [ ] l'année de sortie dans un `<time datetime="2017">`
 
 **Les éléments interactifs**
 

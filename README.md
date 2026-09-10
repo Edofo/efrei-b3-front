@@ -15,6 +15,11 @@ progression. **Si le dossier du jour n'est pas encore là, fais un `git pull`.**
 | Bloc | Atelier | Dossier |
 | --- | --- | --- |
 | 1 | 🕶️ L'écran noir — sémantique, ARIA, SEO | `socle/bloc01-html-nul/` |
+| 2 | 🎨 CSS zéro — intégration complète, flex, grid, animations | `socle/bloc02-css-zero/` |
+
+Les corrigés arrivent **après** l'atelier concerné, dans un sous-dossier
+`correction/`. Le point de départ reste intact à côté : tu peux refaire
+l'exercice depuis zéro à tout moment.
 
 Chaque atelier a son `README.md` : lis-le en entier avant de coder, la
 consigne y tient en une page.
@@ -23,6 +28,15 @@ consigne y tient en une page.
 
 Le socle ne demande **rien à installer** : un navigateur et un éditeur.
 Ouvre le `index.html` de l'atelier et travaille dedans.
+
+À partir du bloc 2, les feuilles de style sont dans des fichiers séparés :
+sers-toi d'un petit serveur statique plutôt que d'ouvrir le fichier à la main.
+
+```bash
+npx serve            # puis http://localhost:3000
+```
+
+(*Live Server* dans VS Code fait la même chose en un clic.)
 
 Deux outils utiles, à lancer sans installation (ils demandent Node) :
 

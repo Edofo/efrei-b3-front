@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NOLANFLIX — Films et séries en streaming</title>
+    <meta
+      name="description"
+      content="Regardez des films et des séries en illimité sur NOLANFLIX : nouveautés, tendances et catalogue complet. Sans engagement."
+    />
+    <link rel="canonical" href="https://nolanflix.example/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#141414" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NOLANFLIX" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://nolanflix.example/" />
+    <meta property="og:title" content="NOLANFLIX — Films et séries en streaming" />
+    <meta
+      property="og:description"
+      content="Regardez des films et des séries en illimité sur NOLANFLIX : nouveautés, tendances et catalogue complet."
+    />
+    <meta property="og:image" content="https://nolanflix.example/og-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="La page d'accueil de NOLANFLIX, avec la série Dark à l'affiche"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "NOLANFLIX",
+        "url": "https://nolanflix.example/",
+        "inLanguage": "fr-FR",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://nolanflix.example/recherche?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/rows.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <a class="logo" href="/">NOLANFLIX</a>
+      <nav aria-label="Navigation principale">
+        <ul class="menu">
+          <li><a class="menu-item menu-item-active" href="/" aria-current="page">Accueil</a></li>
+          <li><a class="menu-item" href="/series">Séries</a></li>
+          <li><a class="menu-item" href="/films">Films</a></li>
+          <li><a class="menu-item" href="/nouveautes">Nouveautés les plus regardées</a></li>
+          <li><a class="menu-item" href="/ma-liste">Ma liste</a></li>
+        </ul>
+      </nav>
+      <div class="topbar-right">
+        <form class="search-box" role="search" action="/recherche" method="get">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <label class="sr-only" for="search">Rechercher un titre, une personne ou un genre</label>
+          <input
+            class="search-input"
+            id="search"
+            name="q"
+            type="search"
+            placeholder="Titres, personnes, genres"
+          />
+        </form>
+        <button class="bell" type="button" aria-label="Notifications">
+          <span aria-hidden="true">🔔</span>
+        </button>
+        <button
+          class="avatar"
+          type="button"
+          id="avatar"
+          aria-label="Profil de Nolan"
+          aria-expanded="false"
+          aria-controls="profile-menu"
+        ></button>
+      </div>
+    </header>
+
+    <ul class="profile-menu" id="profile-menu">
+      <li><button class="profile-row" type="button">Nolan</button></li>
+      <li><button class="profile-row" type="button">Enfants</button></li>
+      <li><button class="profile-row" type="button">Gérer les profils</button></li>
+      <li><button class="profile-row" type="button">Se déconnecter</button></li>
+    </ul>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-img"
+          src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1600'%20height='900'%20viewBox='0%200%201600%20900'%3E%3Cdefs%3E%3ClinearGradient%20id='h'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%233b1d5e'/%3E%3Cstop%20offset='.55'%20stop-color='%237b1d3a'/%3E%3Cstop%20offset='1'%20stop-color='%23c2410c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='1600'%20height='900'%20fill='url(%23h)'/%3E%3Ccircle%20cx='1180'%20cy='300'%20r='230'%20fill='rgba(255,255,255,.10)'/%3E%3Ccircle%20cx='1320'%20cy='560'%20r='140'%20fill='rgba(255,255,255,.07)'/%3E%3Ctext%20x='1150'%20y='330'%20font-family='Helvetica,Arial'%20font-size='230'%20font-weight='bold'%20fill='rgba(255,255,255,.85)'%20text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E"
+          alt=""
+        />
+        <div class="hero-shade"></div>
+        <div class="hero-text">
+          <p class="hero-tag">Série NOLANFLIX</p>
+          <h1 class="hero-title" id="hero-title">Dark</h1>
+          <p class="hero-flags">
+            <span class="flag-new">Nouveaux épisodes</span>
+            <time class="flag-year" datetime="2017">2017</time>
+            <span class="flag-age"
+              >16+<span class="sr-only"> — déconseillé aux moins de 16 ans</span></span
+            >
+          </p>
+          <p class="hero-desc">
+            La disparition de deux enfants met au jour les failles et les secrets de quatre familles
+            d'une petite ville allemande. Le temps y est une notion beaucoup plus élastique qu'il
+            n'y paraît.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-play" type="button" aria-label="Lecture">▶ Lecture</button>
+            <button class="btn btn-info" type="button" aria-label="Plus d'infos">
+              ⓘ Plus d'infos
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="rows">
+        <section class="row" aria-labelledby="row-1">
+          <h2 class="row-title" id="row-1">Tendances actuelles</h2>
+          <div class="row-viewport">
+            <button
+              class="arrow arrow-left"
+              type="button"
+              aria-label="Faire défiler Tendances actuelles vers la gauche"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <ul class="track" hidden>
+              <li class="card">
+                <a href="/titres/elite">
+                  <p class="card-badge">TOP 10</p>
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%235b21b6'/%3E%3Cstop%20offset='1'%20stop-color='%231e1b4b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EÉ%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EÉlite%3C/text%3E%3C/svg%3E"
+                    alt="Élite — Un lycée d'élite, trois boursiers, un meurtre"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Élite</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/the-matrix">
+                  <p class="card-badge">TOP 10</p>
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23065f46'/%3E%3Cstop%20offset='1'%20stop-color='%23022c22'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EM%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EThe%20Matrix%3C/text%3E%3C/svg%3E"
+                    alt="The Matrix — Un informaticien découvre la vraie nature du monde"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">The Matrix</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/amelie">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23b91c1c'/%3E%3Cstop%20offset='1'%20stop-color='%23450a0a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EA%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EAmélie%3C/text%3E%3C/svg%3E"
+                    alt="Amélie — Une serveuse de Montmartre répare la vie des autres"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Amélie</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/dark">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%231e3a8a'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ED%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EDark%3C/text%3E%3C/svg%3E"
+                    alt="Dark — Quatre familles, une grotte, trois époques"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Dark</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/la-casa-de-papel">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23be123c'/%3E%3Cstop%20offset='1'%20stop-color='%234c0519'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EC%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ELa%20Casa%20de%20Papel%3C/text%3E%3C/svg%3E"
+                    alt="La Casa de Papel — Huit braqueurs enfermés dans la Fabrique de billets"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">La Casa de Papel</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/arcane">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%230e7490'/%3E%3Cstop%20offset='1'%20stop-color='%231e1b4b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ER%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EArcane%3C/text%3E%3C/svg%3E"
+                    alt="Arcane — Deux sœurs de part et d'autre d'une guerre de cités"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Arcane</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <ul class="track" id="skeleton" aria-hidden="true">
+              <li class="card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-line"></div>
+              </li>
+              <li class="card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-line"></div>
+              </li>
+              <li class="card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-line"></div>
+              </li>
+              <li class="card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-line"></div>
+              </li>
+              <li class="card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-line"></div>
+              </li>
+              <li class="card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-line"></div>
+              </li>
+            </ul>
+            <p class="sr-only" role="status">Chargement du catalogue…</p>
+            <button
+              class="arrow arrow-right"
+              type="button"
+              aria-label="Faire défiler Tendances actuelles vers la droite"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+        </section>
+        <section class="row" aria-labelledby="row-2">
+          <h2 class="row-title" id="row-2">Reprendre avec le profil de Nolan</h2>
+          <div class="row-viewport">
+            <button
+              class="arrow arrow-left"
+              type="button"
+              aria-label="Faire défiler Reprendre avec le profil de Nolan vers la gauche"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <ul class="track">
+              <li class="card">
+                <a href="/titres/chefs-table">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23a16207'/%3E%3Cstop%20offset='1'%20stop-color='%23292524'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ET%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EChef's%20Table%3C/text%3E%3C/svg%3E"
+                    alt="Chef's Table — Portraits de grands chefs dans leur cuisine"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Chef's Table</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/sense8">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%237e22ce'/%3E%3Cstop%20offset='1'%20stop-color='%233b0764'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ES%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ESense8%3C/text%3E%3C/svg%3E"
+                    alt="Sense8 — Huit inconnus reliés par leurs sens"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Sense8</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/elite-squad">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%233f6212'/%3E%3Cstop%20offset='1'%20stop-color='%231c1917'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EE%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EElite%20Squad%3C/text%3E%3C/svg%3E"
+                    alt="Elite Squad — Une unité d'élite dans les favelas de Rio"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Elite Squad</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/ozark">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23155e75'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EO%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EOzark%3C/text%3E%3C/svg%3E"
+                    alt="Ozark — Un conseiller financier blanchit l'argent d'un cartel"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Ozark</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/stranger-things">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23991b1b'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EN%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EStranger%20Things%3C/text%3E%3C/svg%3E"
+                    alt="Stranger Things — Un enfant disparaît, une fillette aux pouvoirs apparaît"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Stranger Things</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/narcos">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23854d0e'/%3E%3Cstop%20offset='1'%20stop-color='%231c1917'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EX%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ENarcos%3C/text%3E%3C/svg%3E"
+                    alt="Narcos — La traque de Pablo Escobar par la DEA"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Narcos</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <button
+              class="arrow arrow-right"
+              type="button"
+              aria-label="Faire défiler Reprendre avec le profil de Nolan vers la droite"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+        </section>
+        <section class="row" aria-labelledby="row-3">
+          <h2 class="row-title" id="row-3">Populaires sur NOLANFLIX</h2>
+          <div class="row-viewport">
+            <button
+              class="arrow arrow-left"
+              type="button"
+              aria-label="Faire défiler Populaires sur NOLANFLIX vers la gauche"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <ul class="track">
+              <li class="card">
+                <a href="/titres/la-casa-de-papel">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23be123c'/%3E%3Cstop%20offset='1'%20stop-color='%234c0519'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EC%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ELa%20Casa%20de%20Papel%3C/text%3E%3C/svg%3E"
+                    alt="La Casa de Papel — Huit braqueurs enfermés dans la Fabrique de billets"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">La Casa de Papel</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/stranger-things">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23991b1b'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EN%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EStranger%20Things%3C/text%3E%3C/svg%3E"
+                    alt="Stranger Things — Un enfant disparaît, une fillette aux pouvoirs apparaît"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Stranger Things</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/dark">
+                  <p class="card-badge">TOP 10</p>
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%231e3a8a'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ED%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EDark%3C/text%3E%3C/svg%3E"
+                    alt="Dark — Quatre familles, une grotte, trois époques"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Dark</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/arcane">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%230e7490'/%3E%3Cstop%20offset='1'%20stop-color='%231e1b4b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ER%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EArcane%3C/text%3E%3C/svg%3E"
+                    alt="Arcane — Deux sœurs de part et d'autre d'une guerre de cités"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Arcane</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/the-matrix">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23065f46'/%3E%3Cstop%20offset='1'%20stop-color='%23022c22'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EM%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EThe%20Matrix%3C/text%3E%3C/svg%3E"
+                    alt="The Matrix — Un informaticien découvre la vraie nature du monde"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">The Matrix</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+              <li class="card">
+                <a href="/titres/sense8">
+                  <img
+                    class="card-img"
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%237e22ce'/%3E%3Cstop%20offset='1'%20stop-color='%233b0764'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ES%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ESense8%3C/text%3E%3C/svg%3E"
+                    alt="Sense8 — Huit inconnus reliés par leurs sens"
+                  />
+                  <div class="card-meta">
+                    <h3 class="card-title">Sense8</h3>
+                    <div class="card-stars" aria-hidden="true">★★★★☆</div>
+                    <span class="sr-only">Note : 4 sur 5</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <button
+              class="arrow arrow-right"
+              type="button"
+              aria-label="Faire défiler Populaires sur NOLANFLIX vers la droite"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <ul class="socials">
+        <li>
+          <a class="social" href="https://www.facebook.com/nolanflix" aria-label="Facebook"
+            ><span aria-hidden="true">📘</span></a
+          >
+        </li>
+        <li>
+          <a class="social" href="https://www.instagram.com/nolanflix" aria-label="Instagram"
+            ><span aria-hidden="true">📷</span></a
+          >
+        </li>
+        <li>
+          <a class="social" href="https://twitter.com/nolanflix" aria-label="Twitter"
+            ><span aria-hidden="true">🐦</span></a
+          >
+        </li>
+        <li>
+          <a class="social" href="https://www.youtube.com/@nolanflix" aria-label="YouTube"
+            ><span aria-hidden="true">▶️</span></a
+          >
+        </li>
+      </ul>
+      <ul class="foot-links">
+        <li><a class="foot-link" href="/audiodescription">Audiodescription</a></li>
+        <li><a class="foot-link" href="/aide">Centre d'aide</a></li>
+        <li><a class="foot-link" href="/cartes-cadeaux">Cartes cadeaux</a></li>
+        <li><a class="foot-link" href="/presse">Presse</a></li>
+        <li><a class="foot-link" href="/investisseurs">Relations investisseurs</a></li>
+        <li><a class="foot-link" href="/recrutement">Recrutement</a></li>
+        <li><a class="foot-link" href="/conditions-utilisation">Conditions d'utilisation</a></li>
+        <li><a class="foot-link" href="/confidentialite">Confidentialité</a></li>
+        <li><a class="foot-link" href="/contact">Nous contacter</a></li>
+        <li><a class="foot-link" href="/test-de-vitesse">Test de vitesse</a></li>
+        <li><a class="foot-link" href="/mentions-legales">Mentions légales</a></li>
+        <li><a class="foot-link" href="/originales">Uniquement sur NOLANFLIX</a></li>
+      </ul>
+      <p><a class="foot-legal" href="/code-de-service">Code de service</a></p>
+      <p class="foot-copy">© 2026 NOLANFLIX France</p>
+    </footer>
+
+    <script>
+      /* Mets 0 pendant que tu travailles sur les autres animations. */
+      var LOADING_MS = 1200;
+
+      document.querySelectorAll(".arrow").forEach(function (arrow) {
+        arrow.addEventListener("click", function () {
+          var track = arrow.parentNode.querySelector(".track:not([hidden])");
+          var direction = arrow.classList.contains("arrow-left") ? -1 : 1;
+          track.scrollLeft = track.scrollLeft + direction * 700;
+        });
+      });
+
+      var avatar = document.getElementById("avatar");
+      var menu = document.getElementById("profile-menu");
+      avatar.addEventListener("click", function () {
+        var open = menu.classList.toggle("profile-menu-open");
+        avatar.setAttribute("aria-expanded", String(open));
+      });
+
+      /* Ajoute la classe .topbar-scrolled dès que la page a bougé. À toi de
+     décider ce que cette classe fait - il n'y a encore aucune règle CSS. */
+      var topbar = document.querySelector(".topbar");
+      window.addEventListener("scroll", function () {
+        topbar.classList.toggle("topbar-scrolled", window.scrollY > 40);
+      });
+
+      /* Chargement simulé : le squelette laisse la place aux vraies cartes. */
+      window.setTimeout(function () {
+        var skeleton = document.getElementById("skeleton");
+        var real = skeleton.parentNode.querySelector(".track[hidden]");
+        skeleton.hidden = true;
+        real.hidden = false;
+      }, LOADING_MS);
+    </script>
+  </body>
+</html>
