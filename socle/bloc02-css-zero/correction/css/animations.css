@@ -1,0 +1,91 @@
+/* animations.css — étape 6, la dernière
+   ============================================================
+   Les quatre animations demandées s'écrivent ici. Ce fichier est
+   lié en DERNIER dans index.html : c'est ce qui te permet de
+   compléter, depuis ici, une règle écrite dans une autre feuille.
+
+   Ne t'y attaque pas avant que les cinq autres soient finies.
+   ============================================================ */
+
+/* --- 1. La carte qui grandit au survol ------------------------
+   transform, pas width : la carte grandit par-dessus ses voisines
+   au lieu de les pousser. Aucune autre carte n'est repositionnée. */
+.card-img {
+  transition: transform 0.25s ease;
+}
+.card:hover .card-img,
+.card a:focus-visible .card-img {
+  transform: scale(1.12);
+}
+
+/* --- 2. La barre du haut qui se remplit au scroll -------------
+   On n'interpole pas un dégradé vers une couleur : le fond opaque
+   est un pseudo-élément dont on anime l'opacité. z-index négatif =
+   au-dessus du fond de la barre, en dessous de son contenu. */
+.topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #141414;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.topbar-scrolled::before {
+  opacity: 1;
+}
+
+/* --- 3. Le squelette qui respire ------------------------------ */
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+.skeleton-img,
+.skeleton-line {
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+/* --- 4. Le menu profil qui apparaît ---------------------------
+   display ne s'anime pas. On le laisse à block en permanence et on
+   pilote opacity + transform ; visibility retire le menu du parcours
+   clavier quand il est fermé.
+
+   visibility est une propriété DISCRÈTE : sans précaution elle bascule
+   au milieu de la transition, et le menu apparaît d'un coup à mi-fondu.
+   D'où le 0s : à l'ouverture elle change tout de suite, à la fermeture
+   elle attend que le fondu soit fini (delay .2s). */
+.profile-menu {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0s 0.2s;
+}
+.profile-menu-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0s 0s;
+}
+
+/* --- Respecter le réglage système ----------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
