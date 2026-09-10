@@ -1,0 +1,398 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+/* ============================================================
+   NE PAS MODIFIER. La feuille de style est le contrat : votre
+   page réécrite doit rendre exactement pareil, au pixel près.
+   Tous les sélecteurs sont des classes - vous pouvez changer
+   n'importe quelle balise sans rien casser ici.
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Les balises natives n'imposent rien : le HTML peut changer de balise
+   sans que le rendu bouge d'un pixel. Tout le style vient des classes. */
+button, a, input { font: inherit; color: inherit; background: none; border: 0; }
+button { cursor: pointer; text-align: inherit; }
+a { text-decoration: none; display: block; }
+input { appearance: none; }
+ul, ol { list-style: none; }
+img { display: block; }
+[hidden] { display: none !important; }
+
+/* Visible du lecteur d'écran, invisible à l'oeil. */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+
+body {
+  background: #141414;
+  color: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---------- barre du haut ---------- */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; gap: 24px;
+  min-width: 1100px;
+  padding: 18px 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,.85), rgba(0,0,0,0));
+}
+.logo {
+  color: #e50914; font-size: 28px; font-weight: 900;
+  letter-spacing: -1px; cursor: pointer;
+}
+.menu { display: flex; gap: 20px; margin-left: 12px; }
+.menu-item { color: #e5e5e5; font-size: 14px; cursor: pointer; }
+.menu-item:hover { color: #b3b3b3; }
+.menu-item-active { font-weight: 700; color: #ffffff; }
+.topbar-right { display: flex; align-items: center; gap: 18px; margin-left: auto; }
+.search-box {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid #757575; background: rgba(0,0,0,.6); padding: 6px 12px;
+}
+.search-icon { color: #ffffff; font-size: 14px; }
+.search-input {
+  background: transparent; border: 0; outline: none;
+  color: #ffffff; font-size: 14px; width: 190px;
+}
+.search-input::placeholder { color: #b3b3b3; }
+.bell { font-size: 18px; cursor: pointer; }
+.avatar {
+  width: 32px; height: 32px; border-radius: 4px;
+  background: linear-gradient(135deg, #e50914, #b81d24);
+  cursor: pointer;
+}
+.profile-menu {
+  display: none; position: absolute; top: 62px; right: 60px;
+  background: rgba(0,0,0,.92); border: 1px solid #333333;
+  padding: 12px 0; width: 200px;
+}
+.profile-menu-open { display: block; }
+.profile-row { padding: 8px 16px; font-size: 14px; color: #e5e5e5; cursor: pointer; width: 100%; }
+.profile-row:hover { color: #ffffff; }
+
+/* ---------- héros ---------- */
+.hero { position: relative; height: 78vh; min-height: 520px; min-width: 1100px; }
+.hero-img { width: 100%; height: 100%; object-fit: cover; }
+.hero-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(20,20,20,.95) 0%, rgba(20,20,20,.5) 45%, rgba(20,20,20,0) 70%),
+              linear-gradient(to top, #141414 0%, rgba(20,20,20,0) 40%);
+}
+.hero-text { position: absolute; left: 60px; bottom: 22%; max-width: 520px; }
+.hero-tag {
+  color: #b3b3b3; font-size: 13px; letter-spacing: 3px;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.hero-title { font-size: 62px; font-weight: 900; line-height: 1.02; margin-bottom: 14px; }
+.hero-flags { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; }
+.flag-new { color: #46d369; font-size: 14px; font-weight: 700; }
+.flag-year { color: #b3b3b3; font-size: 14px; }
+.flag-age { border: 1px solid #b3b3b3; color: #e5e5e5; font-size: 12px; padding: 1px 7px; }
+.hero-desc { color: #e5e5e5; font-size: 16px; line-height: 1.45; margin-bottom: 24px; }
+.hero-actions { display: flex; gap: 12px; }
+.btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 26px; font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.btn-play { background: #ffffff; color: #141414; }
+.btn-play:hover { background: #d9d9d9; }
+.btn-info { background: rgba(109,109,110,.7); color: #ffffff; }
+.btn-info:hover { background: rgba(109,109,110,.5); }
+
+/* ---------- rangées ---------- */
+.rows { margin-top: -70px; position: relative; z-index: 5; padding-bottom: 40px; }
+.row { margin-bottom: 34px; min-width: 1100px; }
+.row-title { font-size: 21px; font-weight: 700; padding: 0 60px 12px; }
+.row-viewport { position: relative; }
+.track {
+  display: flex; gap: 8px; overflow-x: auto;
+  padding: 0 60px 12px; scrollbar-width: none;
+}
+.track::-webkit-scrollbar { display: none; }
+.card { position: relative; flex: 0 0 236px; cursor: pointer; }
+.card-img { width: 236px; height: 133px; object-fit: cover; border-radius: 4px; }
+.card-badge {
+  position: absolute; top: 6px; left: 6px; z-index: 2;
+  background: #e50914; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 2px;
+}
+.card-meta { padding-top: 7px; }
+.card-title { font-size: 13px; color: #e5e5e5; }
+.card-stars { font-size: 12px; color: #46d369; letter-spacing: 1px; }
+.arrow {
+  position: absolute; top: 0; bottom: 12px; width: 52px; z-index: 6;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(20,20,20,.6); color: #ffffff; font-size: 34px; cursor: pointer;
+}
+.arrow-left { left: 0; }
+.arrow-right { right: 0; }
+
+/* ---------- pied de page ---------- */
+.footer { padding: 50px 60px 70px; min-width: 1100px; }
+.socials { display: flex; gap: 18px; font-size: 20px; margin-bottom: 26px; }
+.social { cursor: pointer; }
+.foot-links {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 20px; margin-bottom: 26px;
+}
+.foot-link { color: #b3b3b3; font-size: 13px; cursor: pointer; }
+.foot-link:hover { color: #ffffff; }
+.foot-legal {
+  border: 1px solid #808080; color: #b3b3b3; font-size: 13px;
+  padding: 8px 12px; display: inline-block; margin-bottom: 18px; cursor: pointer;
+}
+.foot-copy { color: #b3b3b3; font-size: 12px; }
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="logo" onclick="nowhere()">NOLANFLIX</div>
+  <div class="menu">
+    <div class="menu-item menu-item-active" onclick="nowhere()">Accueil</div>
+    <div class="menu-item" onclick="nowhere()">Séries</div>
+    <div class="menu-item" onclick="nowhere()">Films</div>
+    <div class="menu-item" onclick="nowhere()">Nouveautés les plus regardées</div>
+    <div class="menu-item" onclick="nowhere()">Ma liste</div>
+  </div>
+  <div class="topbar-right">
+    <div class="search-box">
+      <div class="search-icon">🔍</div>
+      <input class="search-input" placeholder="Titres, personnes, genres">
+    </div>
+    <div class="bell" onclick="nowhere()">🔔</div>
+    <div class="avatar" onclick="toggleProfile()"></div>
+  </div>
+</div>
+
+<div class="profile-menu" id="profileMenu">
+  <div class="profile-row" onclick="nowhere()">Nolan</div>
+  <div class="profile-row" onclick="nowhere()">Enfants</div>
+  <div class="profile-row" onclick="nowhere()">Gérer les profils</div>
+  <div class="profile-row" onclick="nowhere()">Se déconnecter</div>
+</div>
+
+<div class="hero">
+  <img class="hero-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1600'%20height='900'%20viewBox='0%200%201600%20900'%3E%3Cdefs%3E%3ClinearGradient%20id='h'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%233b1d5e'/%3E%3Cstop%20offset='.55'%20stop-color='%237b1d3a'/%3E%3Cstop%20offset='1'%20stop-color='%23c2410c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='1600'%20height='900'%20fill='url(%23h)'/%3E%3Ccircle%20cx='1180'%20cy='300'%20r='230'%20fill='rgba(255,255,255,.10)'/%3E%3Ccircle%20cx='1320'%20cy='560'%20r='140'%20fill='rgba(255,255,255,.07)'/%3E%3Ctext%20x='1150'%20y='330'%20font-family='Helvetica,Arial'%20font-size='230'%20font-weight='bold'%20fill='rgba(255,255,255,.85)'%20text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+  <div class="hero-shade"></div>
+  <div class="hero-text">
+    <div class="hero-tag">Série NOLANFLIX</div>
+    <div class="hero-title">Dark</div>
+    <div class="hero-flags">
+      <div class="flag-new">Nouveaux épisodes</div>
+      <div class="flag-year">2017</div>
+      <div class="flag-age">16+</div>
+    </div>
+    <div class="hero-desc">La disparition de deux enfants met au jour les failles et les secrets de quatre familles d'une petite ville allemande. Le temps y est une notion beaucoup plus élastique qu'il n'y paraît.</div>
+    <div class="hero-actions">
+      <div class="btn btn-play" onclick="nowhere()">▶ Lecture</div>
+      <div class="btn btn-info" onclick="nowhere()">ⓘ Plus d'infos</div>
+    </div>
+  </div>
+</div>
+
+<div class="rows">
+    <div class="row">
+      <div class="row-title">Tendances actuelles</div>
+      <div class="row-viewport">
+        <div class="arrow arrow-left" onclick="slide(this, -1)">‹</div>
+        <div class="track">
+        <div class="card" id="card">
+          <div class="card-badge">TOP 10</div>
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%235b21b6'/%3E%3Cstop%20offset='1'%20stop-color='%231e1b4b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EÉ%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EÉlite%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Élite</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <div class="card-badge">TOP 10</div>
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23065f46'/%3E%3Cstop%20offset='1'%20stop-color='%23022c22'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EM%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EThe%20Matrix%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">The Matrix</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23b91c1c'/%3E%3Cstop%20offset='1'%20stop-color='%23450a0a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EA%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EAmélie%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Amélie</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%231e3a8a'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ED%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EDark%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Dark</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23be123c'/%3E%3Cstop%20offset='1'%20stop-color='%234c0519'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EC%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ELa%20Casa%20de%20Papel%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">La Casa de Papel</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%230e7490'/%3E%3Cstop%20offset='1'%20stop-color='%231e1b4b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ER%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EArcane%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Arcane</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        </div>
+        <div class="arrow arrow-right" onclick="slide(this, 1)">›</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-title">Reprendre avec le profil de Nolan</div>
+      <div class="row-viewport">
+        <div class="arrow arrow-left" onclick="slide(this, -1)">‹</div>
+        <div class="track">
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23a16207'/%3E%3Cstop%20offset='1'%20stop-color='%23292524'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ET%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EChef's%20Table%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Chef's Table</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%237e22ce'/%3E%3Cstop%20offset='1'%20stop-color='%233b0764'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ES%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ESense8%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Sense8</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%233f6212'/%3E%3Cstop%20offset='1'%20stop-color='%231c1917'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EE%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EElite%20Squad%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Elite Squad</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23155e75'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EO%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EOzark%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Ozark</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23991b1b'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EN%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EStranger%20Things%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Stranger Things</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23854d0e'/%3E%3Cstop%20offset='1'%20stop-color='%231c1917'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EX%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ENarcos%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Narcos</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        </div>
+        <div class="arrow arrow-right" onclick="slide(this, 1)">›</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-title">Populaires sur NOLANFLIX</div>
+      <div class="row-viewport">
+        <div class="arrow arrow-left" onclick="slide(this, -1)">‹</div>
+        <div class="track">
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23be123c'/%3E%3Cstop%20offset='1'%20stop-color='%234c0519'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EC%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ELa%20Casa%20de%20Papel%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">La Casa de Papel</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23991b1b'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EN%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EStranger%20Things%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Stranger Things</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <div class="card-badge">TOP 10</div>
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%231e3a8a'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ED%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EDark%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Dark</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%230e7490'/%3E%3Cstop%20offset='1'%20stop-color='%231e1b4b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ER%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EArcane%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Arcane</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23065f46'/%3E%3Cstop%20offset='1'%20stop-color='%23022c22'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EM%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EThe%20Matrix%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">The Matrix</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="card" id="card">
+          <img class="card-img" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%237e22ce'/%3E%3Cstop%20offset='1'%20stop-color='%233b0764'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ES%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ESense8%3C/text%3E%3C/svg%3E">
+          <div class="card-meta">
+            <div class="card-title">Sense8</div>
+            <div class="card-stars">★★★★☆</div>
+          </div>
+        </div>
+        </div>
+        <div class="arrow arrow-right" onclick="slide(this, 1)">›</div>
+      </div>
+    </div>
+</div>
+
+<div class="footer">
+  <div class="socials">
+    <div class="social" onclick="nowhere()">📘</div>
+    <div class="social" onclick="nowhere()">📷</div>
+    <div class="social" onclick="nowhere()">🐦</div>
+    <div class="social" onclick="nowhere()">▶️</div>
+  </div>
+  <div class="foot-links">
+    <div class="foot-link" onclick="nowhere()">Audiodescription</div>
+    <div class="foot-link" onclick="nowhere()">Centre d'aide</div>
+    <div class="foot-link" onclick="nowhere()">Cartes cadeaux</div>
+    <div class="foot-link" onclick="nowhere()">Presse</div>
+    <div class="foot-link" onclick="nowhere()">Relations investisseurs</div>
+    <div class="foot-link" onclick="nowhere()">Recrutement</div>
+    <div class="foot-link" onclick="nowhere()">Conditions d'utilisation</div>
+    <div class="foot-link" onclick="nowhere()">Confidentialité</div>
+    <div class="foot-link" onclick="nowhere()">Nous contacter</div>
+    <div class="foot-link" onclick="nowhere()">Test de vitesse</div>
+    <div class="foot-link" onclick="nowhere()">Mentions légales</div>
+    <div class="foot-link" onclick="nowhere()">Uniquement sur NOLANFLIX</div>
+  </div>
+  <div class="foot-legal" onclick="nowhere()">Code de service</div>
+  <div class="foot-copy">© 2026 NOLANFLIX France</div>
+</div>
+
+<script>
+  function slide(arrow, direction) {
+    var track = arrow.parentNode.querySelector(".track");
+    track.scrollLeft = track.scrollLeft + direction * 700;
+  }
+  function toggleProfile() {
+    document.getElementById("profileMenu").classList.toggle("profile-menu-open");
+  }
+  function nowhere() {
+    /* la vraie navigation viendra plus tard */
+  }
+</script>
+
+</body>
+</html>
