@@ -1,0 +1,82 @@
+/* Fondations : reset, base, boutons */
+/* ---------- fondations & design system ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Les balises natives n'imposent rien : le HTML peut changer de balise
+   sans que le rendu bouge d'un pixel. Tout le style vient des classes. */
+button,
+a,
+input {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+}
+button {
+  cursor: pointer;
+  text-align: inherit;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+input {
+  appearance: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  display: block;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Visible du lecteur d'écran, invisible à l'oeil. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+body {
+  background: #141414;
+  color: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---------- boutons ---------- */
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-play {
+  background: #ffffff;
+  color: #141414;
+}
+.btn-play:hover {
+  background: #d9d9d9;
+}
+.btn-info {
+  background: rgba(109, 109, 110, 0.7);
+  color: #ffffff;
+}
+.btn-info:hover {
+  background: rgba(109, 109, 110, 0.5);
+}

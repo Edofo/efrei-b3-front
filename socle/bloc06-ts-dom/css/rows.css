@@ -1,0 +1,100 @@
+/* Les rangées de cartes */
+/* ---------- rangées ---------- */
+.rows {
+  margin-top: -70px;
+  position: relative;
+  z-index: 5;
+  padding-bottom: 40px;
+}
+.row {
+  margin-bottom: 34px;
+  min-width: 1100px;
+}
+.row-title {
+  font-size: 21px;
+  font-weight: 700;
+  padding: 0 60px 12px;
+}
+.row-viewport {
+  position: relative;
+}
+.track {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 0 60px 12px;
+  scrollbar-width: none;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  position: relative;
+  flex: 0 0 236px;
+  cursor: pointer;
+}
+.card-img {
+  width: 236px;
+  height: 133px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.card-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+  background: #e50914;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.card-meta {
+  padding-top: 7px;
+}
+.card-title {
+  font-size: 13px;
+  font-weight: 400;
+  color: #e5e5e5;
+}
+.card-stars {
+  font-size: 12px;
+  color: #46d369;
+  letter-spacing: 1px;
+}
+.arrow {
+  position: absolute;
+  top: 0;
+  bottom: 12px;
+  width: 52px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 20, 20, 0.6);
+  color: #ffffff;
+  font-size: 34px;
+  cursor: pointer;
+}
+.arrow-left {
+  left: 0;
+}
+.arrow-right {
+  right: 0;
+}
+
+/* ---------- squelette de chargement ---------- */
+.skeleton-img {
+  width: 236px;
+  height: 133px;
+  border-radius: 4px;
+  background: #2a2a2a;
+}
+.skeleton-line {
+  height: 11px;
+  width: 70%;
+  margin-top: 11px;
+  border-radius: 2px;
+  background: #2a2a2a;
+}

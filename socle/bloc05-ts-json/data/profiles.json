@@ -1,0 +1,69 @@
+[
+  {
+    "id": "nolan",
+    "name": "Nolan",
+    "email": "nolan@nolanflix.example",
+    "age": 27,
+    "favoriteGenres": [
+      "drame",
+      "thriller"
+    ],
+    "history": [
+      {
+        "id": "dark",
+        "progress": 1,
+        "watchedAt": "2026-08-12T20:15:00Z"
+      },
+      {
+        "id": "ozark",
+        "progress": 0.6,
+        "watchedAt": "2026-08-20T21:40:00Z"
+      },
+      {
+        "id": "sense8",
+        "progress": 0.15,
+        "watchedAt": "2026-07-02T22:05:00Z"
+      },
+      {
+        "id": "matrix",
+        "progress": 1,
+        "watchedAt": "2026-05-30T19:00:00Z"
+      },
+      {
+        "id": "ghost",
+        "progress": 0.5,
+        "watchedAt": "2026-01-01T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "kids",
+    "name": "Enfants",
+    "email": "enfants@nolanflix.example",
+    "age": 8,
+    "favoriteGenres": [
+      "animation",
+      "comédie"
+    ],
+    "history": [
+      {
+        "id": "arcane",
+        "progress": 0.4,
+        "watchedAt": "2026-08-28T17:30:00Z"
+      },
+      {
+        "id": "amelie",
+        "progress": 1,
+        "watchedAt": "2026-08-01T14:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "guest",
+    "name": "Invité",
+    "email": "invite@nolanflix.example",
+    "age": 35,
+    "favoriteGenres": [],
+    "history": []
+  }
+]

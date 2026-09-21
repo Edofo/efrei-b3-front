@@ -1,0 +1,26 @@
+{
+  "name": "bloc04-ts-algorithms",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "play": "node --watch play.ts",
+    "test": "node play.ts --all --no-lesson",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm test",
+    "reset": "node play.ts --reset"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.39.0",
+    "prettier": "^3.6.0",
+    "typescript": "^6.0.0",
+    "typescript-eslint": "^8.50.0"
+  }
+}

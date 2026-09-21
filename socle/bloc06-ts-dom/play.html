@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NOLANFLIX QUEST · bloc 6 · le DOM</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #0f0f0f;
+        color: #eee;
+        font:
+          15px/1.5 -apple-system,
+          "Segoe UI",
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      a {
+        color: #7cc4ff;
+      }
+      code,
+      pre {
+        font-family: ui-monospace, Menlo, Consolas, monospace;
+      }
+      code {
+        background: #1f1f1f;
+        padding: 1px 5px;
+        border-radius: 4px;
+        font-size: 0.92em;
+      }
+      pre {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+        padding: 10px 12px;
+        overflow-x: auto;
+        margin: 8px 0;
+      }
+      pre code {
+        background: none;
+        padding: 0;
+      }
+      .dim {
+        color: #8a8a8a;
+      }
+      #game {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 16px 20px 0;
+      }
+      .game-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4px 24px;
+        align-items: center;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #2a2a2a;
+      }
+      .game-title {
+        font-size: 18px;
+      }
+      .game-brand {
+        color: #e50914;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+      .game-rank {
+        font-weight: 600;
+      }
+      .game-bar {
+        grid-column: 1;
+        height: 10px;
+        background: #2a2a2a;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .game-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #e50914, #ff6a3d);
+        transition: width 0.4s;
+      }
+      .game-mode {
+        grid-column: 1 / -1;
+        margin: 0;
+        color: #ffb454;
+      }
+      .game-events {
+        list-style: none;
+        margin: 12px 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .game-events li {
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #1f1f1f;
+        border: 1px solid #333;
+        animation: pop 0.4s ease-out;
+      }
+      .ev-quest {
+        border-color: #46d369 !important;
+      }
+      .ev-challenge {
+        border-color: #ffd54a !important;
+      }
+      .ev-rank {
+        border-color: #e50914 !important;
+        font-weight: 700;
+      }
+      @keyframes pop {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: none;
+          opacity: 1;
+        }
+      }
+      .game-body {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 24px;
+        margin-top: 16px;
+      }
+      .game-map {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .quest {
+        display: flex;
+        gap: 6px;
+        align-items: baseline;
+        padding: 6px 10px;
+        border-radius: 6px;
+        color: inherit;
+        text-decoration: none;
+      }
+      .quest:hover {
+        background: #1c1c1c;
+      }
+      .quest-icon {
+        width: 1.4em;
+      }
+      .quest-done .quest-icon {
+        color: #46d369;
+      }
+      .quest-regression {
+        color: #ff6b6b;
+      }
+      .quest-current {
+        font-weight: 700;
+      }
+      .quest-current .quest-icon {
+        color: #ffd54a;
+      }
+      .quest-locked {
+        color: #666;
+        pointer-events: none;
+      }
+      .quest-focus {
+        background: #1c1c1c;
+        outline: 1px solid #333;
+      }
+      .stars {
+        color: #ffd54a;
+        margin-left: auto;
+        font-size: 13px;
+      }
+      .game-tools {
+        font-size: 13px;
+        color: #8a8a8a;
+        margin: 14px 8px;
+      }
+      .danger {
+        color: #ff8a8a;
+      }
+      .quest-header {
+        margin: 0 0 12px;
+        font-size: 22px;
+        display: flex;
+        gap: 14px;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+      .file {
+        font-size: 14px;
+        color: #ffb454;
+      }
+      .game-columns {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 24px;
+      }
+      .lesson p {
+        margin: 0 0 10px;
+      }
+      .lesson h3,
+      .tests h3 {
+        margin: 16px 0 6px;
+        font-size: 16px;
+      }
+      .test-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .test-list li {
+        padding: 5px 0;
+        border-bottom: 1px solid #1f1f1f;
+      }
+      .test-ok {
+        color: #46d369;
+      }
+      .test-fail {
+        color: #ff6b6b;
+      }
+      .test-later {
+        color: #777;
+      }
+      .test-challenge {
+        padding: 5px 0;
+        color: #ffd54a;
+      }
+      .bonus {
+        color: #ffd54a;
+        font-size: 13px;
+      }
+      .error {
+        color: #ffb4b4;
+        white-space: pre-wrap;
+      }
+      .hint {
+        color: #ffd54a;
+        margin: 4px 0;
+      }
+      .summary {
+        margin-top: 14px;
+        padding: 10px 12px;
+        background: #1a1a1a;
+        border-radius: 6px;
+      }
+      .summary-ok {
+        background: #113d1f;
+      }
+      .regression {
+        border: 1px solid #5a1f1f;
+        background: #1d1010;
+        border-radius: 6px;
+        padding: 8px 14px;
+        margin-bottom: 14px;
+      }
+      .regression h3 {
+        margin: 4px 0;
+        color: #ff6b6b;
+      }
+      .game-end {
+        color: #ffd54a;
+      }
+      .sandbox-section {
+        max-width: 1400px;
+        margin: 24px auto 0;
+        padding: 0 20px 40px;
+      }
+      .sandbox-section h2 {
+        font-size: 16px;
+        color: #8a8a8a;
+        margin: 0 0 8px;
+      }
+      #sandbox {
+        border: 1px solid #2a2a2a;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      @media (max-width: 1000px) {
+        .game-body,
+        .game-columns {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game"><p class="dim" style="padding: 20px">Loading the game…</p></div>
+    <section class="sandbox-section">
+      <h2>🧪 Sandbox — what your functions built, test by test, with the real CSS</h2>
+      <div id="sandbox"></div>
+    </section>
+    <script type="module" src="/play.ts"></script>
+  </body>
+</html>

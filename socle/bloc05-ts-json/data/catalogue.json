@@ -1,0 +1,478 @@
+{
+  "version": 3,
+  "generatedAt": "2026-09-01T06:00:00Z",
+  "rows": [
+    {
+      "id": "trending",
+      "title": "Tendances actuelles",
+      "ids": [
+        "elite",
+        "matrix",
+        "amelie",
+        "dark",
+        "casa",
+        "arcane"
+      ]
+    },
+    {
+      "id": "continue",
+      "title": "Reprendre avec le profil de Nolan",
+      "ids": [
+        "chef",
+        "sense8",
+        "squad",
+        "ozark",
+        "stranger",
+        "narcos"
+      ]
+    },
+    {
+      "id": "popular",
+      "title": "Populaires sur NOLANFLIX",
+      "ids": [
+        "casa",
+        "stranger",
+        "dark",
+        "arcane",
+        "matrix",
+        "sense8"
+      ]
+    }
+  ],
+  "titles": [
+    {
+      "id": "elite",
+      "title": "Élite",
+      "kind": "series",
+      "year": 2018,
+      "genres": [
+        "drame",
+        "thriller"
+      ],
+      "rating": 3.8,
+      "minimumAge": 16,
+      "tagline": "Un lycée d'élite, trois boursiers, un meurtre",
+      "seasons": [
+        {
+          "number": 1,
+          "episodes": 8
+        },
+        {
+          "number": 2,
+          "episodes": 8
+        },
+        {
+          "number": 3,
+          "episodes": 8
+        },
+        {
+          "number": 4,
+          "episodes": 10
+        }
+      ],
+      "credits": {
+        "director": "Carlos Montero",
+        "cast": [
+          "Itzan Escamilla",
+          "Miguel Bernardeau"
+        ]
+      },
+      "isNew": true,
+      "top10": true,
+      "addedOn": "2026-08-30",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%235b21b6'/%3E%3Cstop%20offset='1'%20stop-color='%231e1b4b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EÉ%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EÉlite%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "matrix",
+      "title": "The Matrix",
+      "kind": "movie",
+      "year": 1999,
+      "genres": [
+        "science-fiction",
+        "action"
+      ],
+      "rating": 4.7,
+      "minimumAge": 12,
+      "tagline": "Un informaticien découvre la vraie nature du monde",
+      "runtime": 136,
+      "credits": {
+        "director": "Lana et Lilly Wachowski",
+        "cast": [
+          "Keanu Reeves",
+          "Carrie-Anne Moss"
+        ]
+      },
+      "isNew": false,
+      "top10": true,
+      "addedOn": "2025-11-02",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23065f46'/%3E%3Cstop%20offset='1'%20stop-color='%23022c22'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EM%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EThe%20Matrix%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "amelie",
+      "title": "Amélie",
+      "kind": "movie",
+      "year": 2001,
+      "genres": [
+        "comédie",
+        "romance"
+      ],
+      "rating": 4.2,
+      "minimumAge": 0,
+      "tagline": "Une serveuse de Montmartre répare la vie des autres",
+      "runtime": 122,
+      "credits": {
+        "director": "Jean-Pierre Jeunet",
+        "cast": [
+          "Audrey Tautou",
+          "Mathieu Kassovitz"
+        ]
+      },
+      "isNew": false,
+      "top10": false,
+      "addedOn": "2025-06-14",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23b91c1c'/%3E%3Cstop%20offset='1'%20stop-color='%23450a0a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EA%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EAmélie%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "dark",
+      "title": "Dark",
+      "kind": "series",
+      "year": 2017,
+      "genres": [
+        "drame",
+        "science-fiction",
+        "thriller"
+      ],
+      "rating": 4.5,
+      "minimumAge": 16,
+      "tagline": "Quatre familles, une grotte, trois époques",
+      "seasons": [
+        {
+          "number": 1,
+          "episodes": 10
+        },
+        {
+          "number": 2,
+          "episodes": 8
+        },
+        {
+          "number": 3,
+          "episodes": 8
+        }
+      ],
+      "credits": {
+        "director": "Baran bo Odar",
+        "cast": [
+          "Louis Hofmann",
+          "Lisa Vicari"
+        ]
+      },
+      "isNew": true,
+      "top10": false,
+      "addedOn": "2026-09-01",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%231e3a8a'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ED%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EDark%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "casa",
+      "title": "La Casa de Papel",
+      "kind": "series",
+      "year": 2017,
+      "genres": [
+        "action",
+        "thriller"
+      ],
+      "rating": 4.0,
+      "minimumAge": 16,
+      "tagline": "Huit braqueurs enfermés dans la Fabrique de billets",
+      "seasons": [
+        {
+          "number": 1,
+          "episodes": 13
+        },
+        {
+          "number": 2,
+          "episodes": 9
+        },
+        {
+          "number": 3,
+          "episodes": 8
+        },
+        {
+          "number": 4,
+          "episodes": 8
+        },
+        {
+          "number": 5,
+          "episodes": 10
+        }
+      ],
+      "credits": {
+        "director": "Álex Pina",
+        "cast": [
+          "Úrsula Corberó",
+          "Álvaro Morte"
+        ]
+      },
+      "isNew": false,
+      "top10": true,
+      "addedOn": "2025-03-21",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23be123c'/%3E%3Cstop%20offset='1'%20stop-color='%234c0519'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EC%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ELa%20Casa%20de%20Papel%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "arcane",
+      "title": "Arcane",
+      "kind": "series",
+      "year": 2021,
+      "genres": [
+        "animation",
+        "action",
+        "drame"
+      ],
+      "rating": 4.8,
+      "minimumAge": 12,
+      "tagline": "Deux sœurs de part et d'autre d'une guerre de cités",
+      "seasons": [
+        {
+          "number": 1,
+          "episodes": 9
+        },
+        {
+          "number": 2,
+          "episodes": 9
+        }
+      ],
+      "credits": {
+        "director": "Pascal Charrue",
+        "cast": [
+          "Hailee Steinfeld",
+          "Ella Purnell"
+        ]
+      },
+      "isNew": true,
+      "top10": false,
+      "addedOn": "2026-07-19",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%230e7490'/%3E%3Cstop%20offset='1'%20stop-color='%231e1b4b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ER%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EArcane%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "chef",
+      "title": "Chef's Table",
+      "kind": "series",
+      "year": 2015,
+      "genres": [
+        "documentaire"
+      ],
+      "minimumAge": 0,
+      "tagline": "Portraits de grands chefs dans leur cuisine",
+      "seasons": [
+        {
+          "number": 1,
+          "episodes": 6
+        },
+        {
+          "number": 2,
+          "episodes": 6
+        },
+        {
+          "number": 3,
+          "episodes": 6
+        },
+        {
+          "number": 4,
+          "episodes": 4
+        },
+        {
+          "number": 5,
+          "episodes": 4
+        },
+        {
+          "number": 6,
+          "episodes": 6
+        }
+      ],
+      "isNew": false,
+      "top10": false,
+      "addedOn": "2024-12-05",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23a16207'/%3E%3Cstop%20offset='1'%20stop-color='%23292524'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ET%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EChef's%20Table%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "sense8",
+      "title": "Sense8",
+      "kind": "series",
+      "year": 2015,
+      "genres": [
+        "science-fiction",
+        "drame"
+      ],
+      "rating": 4.1,
+      "minimumAge": 16,
+      "tagline": "Huit inconnus reliés par leurs sens",
+      "seasons": [
+        {
+          "number": 1,
+          "episodes": 12
+        },
+        {
+          "number": 2,
+          "episodes": 11
+        }
+      ],
+      "credits": {
+        "director": "Lana Wachowski",
+        "cast": [
+          "Doona Bae",
+          "Jamie Clayton"
+        ]
+      },
+      "isNew": false,
+      "top10": false,
+      "addedOn": "2025-01-10",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%237e22ce'/%3E%3Cstop%20offset='1'%20stop-color='%233b0764'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3ES%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ESense8%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "squad",
+      "title": "Elite Squad",
+      "kind": "movie",
+      "year": 2007,
+      "genres": [
+        "action",
+        "thriller"
+      ],
+      "rating": 3.7,
+      "minimumAge": 18,
+      "tagline": "Une unité d'élite dans les favelas de Rio",
+      "runtime": 115,
+      "credits": {
+        "director": "José Padilha",
+        "cast": [
+          "Wagner Moura",
+          "Caio Junqueira"
+        ]
+      },
+      "isNew": false,
+      "top10": false,
+      "addedOn": "2024-10-28",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%233f6212'/%3E%3Cstop%20offset='1'%20stop-color='%231c1917'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EE%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EElite%20Squad%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "ozark",
+      "title": "Ozark",
+      "kind": "series",
+      "year": 2017,
+      "genres": [
+        "drame",
+        "thriller"
+      ],
+      "rating": 4.3,
+      "minimumAge": 18,
+      "tagline": "Un conseiller financier blanchit l'argent d'un cartel",
+      "seasons": [
+        {
+          "number": 1,
+          "episodes": 10
+        },
+        {
+          "number": 2,
+          "episodes": 10
+        },
+        {
+          "number": 3,
+          "episodes": 10
+        },
+        {
+          "number": 4,
+          "episodes": 14
+        }
+      ],
+      "credits": {
+        "director": "Bill Dubuque",
+        "cast": [
+          "Jason Bateman",
+          "Laura Linney"
+        ]
+      },
+      "isNew": false,
+      "top10": false,
+      "addedOn": "2025-05-05",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23155e75'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EO%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EOzark%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "stranger",
+      "title": "Stranger Things",
+      "kind": "series",
+      "year": 2016,
+      "genres": [
+        "science-fiction",
+        "horreur"
+      ],
+      "rating": 4.4,
+      "minimumAge": 12,
+      "tagline": "Un enfant disparaît, une fillette aux pouvoirs apparaît",
+      "seasons": [
+        {
+          "number": 1,
+          "episodes": 8
+        },
+        {
+          "number": 2,
+          "episodes": 9
+        },
+        {
+          "number": 3,
+          "episodes": 8
+        },
+        {
+          "number": 4,
+          "episodes": 9
+        }
+      ],
+      "credits": {
+        "director": "Les frères Duffer",
+        "cast": [
+          "Millie Bobby Brown",
+          "Finn Wolfhard"
+        ]
+      },
+      "isNew": true,
+      "top10": true,
+      "addedOn": "2026-08-15",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23991b1b'/%3E%3Cstop%20offset='1'%20stop-color='%230c0a09'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EN%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3EStranger%20Things%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": "narcos",
+      "title": "Narcos",
+      "kind": "series",
+      "year": 2015,
+      "genres": [
+        "drame",
+        "thriller"
+      ],
+      "rating": 4.3,
+      "minimumAge": 18,
+      "tagline": "La traque de Pablo Escobar par la DEA",
+      "seasons": [
+        {
+          "number": 1,
+          "episodes": 10
+        },
+        {
+          "number": 2,
+          "episodes": 10
+        },
+        {
+          "number": 3,
+          "episodes": 10
+        }
+      ],
+      "credits": {
+        "director": "Chris Brancato",
+        "cast": [
+          "Wagner Moura",
+          "Pedro Pascal"
+        ]
+      },
+      "isNew": false,
+      "top10": false,
+      "addedOn": "2024-09-09",
+      "poster": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='480'%20height='270'%20viewBox='0%200%20480%20270'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23854d0e'/%3E%3Cstop%20offset='1'%20stop-color='%231c1917'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='480'%20height='270'%20fill='url(%23g)'/%3E%3Ccircle%20cx='390'%20cy='70'%20r='90'%20fill='rgba(255,255,255,.08)'/%3E%3Ctext%20x='40'%20y='170'%20font-family='Helvetica,Arial'%20font-size='130'%20font-weight='bold'%20fill='rgba(255,255,255,.9)'%3EX%3C/text%3E%3Ctext%20x='44'%20y='222'%20font-family='Helvetica,Arial'%20font-size='26'%20fill='rgba(255,255,255,.75)'%3ENarcos%3C/text%3E%3C/svg%3E"
+    }
+  ]
+}
