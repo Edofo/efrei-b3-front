@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { DEFAULT_TIME } from "../constants/time";
 
-export const Timer = () => {
+export const Timer = React.memo(() => {
   const [count, setCount] = useState(DEFAULT_TIME);
   const [isRunning, setIsRunning] = useState(false);
 
@@ -30,4 +30,4 @@ export const Timer = () => {
       <button onClick={() => setCount(DEFAULT_TIME)}>Reset</button>
     </div>
   );
-};
+});
