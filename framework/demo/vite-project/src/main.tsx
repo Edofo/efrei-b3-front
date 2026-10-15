@@ -7,6 +7,7 @@ import { routes } from "./constants/routes.ts";
 import { App, Dashboard, Details } from "./pages";
 import { Home, Stats } from "./pages/dashboard/index.ts";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
   },
   {
     path: routes.DETAILS,
-    Component: Details,
+    element: (
+      <ProtectedRoute>
+        <Details />
+      </ProtectedRoute>
+    ),
   },
   {
     path: routes.DASHBOARD,
